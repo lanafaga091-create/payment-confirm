@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konfirmasi Pembayaran — BlockHost</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Konfirmasi Pembayaran</h1>
+      <p class="sub">Sudah transfer? Isi form ini supaya admin bisa cek dan aktifkan paketmu.</p>
+    </header>
+
+    <section class="card" id="infoCard">
+      <h2>1. Transfer ke rekening berikut</h2>
+      <div id="paymentInfo" class="info-box">Memuat info pembayaran…</div>
+    </section>
+
+    <section class="card">
+      <h2>2. Isi form konfirmasi</h2>
+      <form id="form">
+        <label>Jenis pembelian
+          <select name="type" id="typeSelect">
+            <option value="paket">Paket Hosting (Batu/Besi/Emas/Berlian)</option>
+            <option value="vip">VIP Server (VIP I/II/III)</option>
+          </select>
+        </label>
+        <label>Nama
+          <input type="text" name="name" required placeholder="Nama kamu">
+        </label>
+        <label>Email akun BlockHost
+          <input type="email" name="email" required placeholder="email yang dipakai login di panel">
+        </label>
+        <label id="playerLabel" class="hidden">Nama akun Minecraft (in-game)
+          <input type="text" name="player" placeholder="username yang dipakai login ke server Minecraft">
+        </label>
+        <label id="paketTierLabel">Paket
+          <select name="tier" id="paketTierSelect">
+            <option value="">— Pilih paket —</option>
+            <option value="Batu">Batu — Rp15.000</option>
+            <option value="Besi">Besi — Rp35.000</option>
+            <option value="Emas">Emas — Rp65.000</option>
+            <option value="Berlian">Berlian — Rp120.000</option>
+          </select>
+        </label>
+        <label id="vipTierLabel" class="hidden">Tier VIP
+          <select name="tier" id="vipTierSelect">
+            <option value="">— Pilih tier VIP —</option>
+            <option value="VIP I">VIP I — Perunggu — Rp10.000</option>
+            <option value="VIP II">VIP II — Perak — Rp25.000</option>
+            <option value="VIP III">VIP III — Emas — Rp50.000</option>
+          </select>
+        </label>
+        <label>Nominal transfer
+          <input type="text" name="price" required placeholder="contoh: Rp25.000">
+        </label>
+        <label>Kode referensi / berita transfer
+          <input type="text" name="reference" required placeholder="contoh: nomor referensi m-banking">
+        </label>
+        <label>Catatan (opsional)
+          <textarea name="note" rows="3" placeholder="Info tambahan kalau ada"></textarea>
+        </label>
+        <button type="submit">Kirim Konfirmasi</button>
+      </form>
+      <p id="formMsg" class="msg"></p>
+    </section>
+
+    <section class="card">
+      <h2>3. Cek status pengajuan</h2>
+      <form id="statusForm">
+        <label>Email
+          <input type="email" name="email" required placeholder="email yang tadi dipakai">
+        </label>
+        <button type="submit">Cek Status</button>
+      </form>
+      <div id="statusList"></div>
+    </section>
+
+    <footer><a href="admin.html">Masuk sebagai admin</a></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
